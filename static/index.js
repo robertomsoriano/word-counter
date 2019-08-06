@@ -1,5 +1,5 @@
 function getCount() {
-  fetch("http://127.0.0.1/count")
+  fetch("/count")
     .then(res => res.json())
     .then(res => {
       console.log(res);
@@ -20,7 +20,7 @@ function getCount() {
 getCount();
 
 //Form submission
-function postData(url = "http://127.0.0.1", data) {
+function postData(url = "/", data) {
   // Default options are marked with *
   return fetch(url, {
     method: "POST",
@@ -45,7 +45,7 @@ function logSubmit(event) {
     message: `${msg}`
   };
   console.log(data);
-  postData("http://127.0.0.1", data);
+  postData("/", data);
 }
 //Listen for Submission
 const form = document.getElementById("form-sendCount");
