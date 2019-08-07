@@ -7,6 +7,18 @@ A [front-end UI](https://counter.robertmsoriano.com) has also been added, to all
 
 <img src='word-counter.png' height='300px' width='300px'/>
 
+### Project's requirements
+This project is the result of a coding assignment from LifeWay Christian Resources. Here are the requirements:
+
+1. Create a REST service with a single endpoint that accepts a json message with two fields.."id" and "message". (example: { "id": "123", "message": "hello world" })
+2. The endpoint should return a json document with a single field "count" that contains the total number of words contained in all the messages received to that point.
+For example, if the first message contains 3 words it would responsd with count = 3. If the next message contains 5 words it would respond with count = 8.
+3. The service should ignore messages with duplicate ids. (i.e. ids that have already been processed)
+4. Use the programming language of your choice.
+5. Upload all code to a public github repo with a readme that explains how to build and run the project
+
+Following are the instructions on how to build and run the project. 
+
 ## Get Started
 
 These instructions will get you a copy of the project up and running on your local machine for development purposes. See deployment for notes on how to deploy the project on a live system, e.g. Heroku, Docker.
