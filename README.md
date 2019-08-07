@@ -9,12 +9,12 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 This Projects requires NodeJS and MongoDB. We will also use NPM for package management. 
--MongoDB will be connected using [MongooseJS](https://mongoosejs.com/).
--You may signup for a free Cloud [MongoDB](https://www.mongodb.com/cloud) instance, or run your own locally.
+- MongoDB will be connected using [MongooseJS](https://mongoosejs.com/).
+- You may signup for a free Cloud [MongoDB](https://www.mongodb.com/cloud) instance, or run your own locally.
 
-*[NodeJS](https://nodejs.org/)
-*[MongoDB](https://www.mongodb.com/)
-*[NPM](https://www.npmjs.com/)
+* [NodeJS](https://nodejs.org/)
+* [MongoDB](https://www.mongodb.com/)
+* [NPM](https://www.npmjs.com/)
 
 
 ### Installing
@@ -45,10 +45,11 @@ Start the server
 
 ```
 npm run start
+
 //If sucessfull, console output should read:
-> MongoDB connection with retry
-> Server started
-> MongoDB is connected
+MongoDB connection with retry
+Server started
+MongoDB is connected
 ```
 
 Unless specified otherwise, server will run in http://localhost, or http://127.0.0.1:80
