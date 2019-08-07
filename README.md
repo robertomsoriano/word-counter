@@ -4,7 +4,9 @@ Word counter using ExpressJS and MongoDB. Provides a RESTful API endpoint, that 
 <br/>
 
 A [front-end UI](https://counter.robertmsoriano.com) has also been added, to allow users to submit requests from their browser. 
-![Word-Counter](https://ibb.co/dKYtNqt)
+
+<img src='https://ibb.co/dKYtNqt'/>
+
 ## Get Started
 
 These instructions will get you a copy of the project up and running on your local machine for development purposes. See deployment for notes on how to deploy the project on a live system, e.g. Heroku, Docker.
