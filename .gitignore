@@ -4,4 +4,3 @@ jspm_packages
 .env
 # Serverless directories
 .serverless
-*.png
