@@ -32,7 +32,7 @@ cd word-counter/
 npm install 
 ```
 Add .env file with MONGO_URI and NODE_ENV environment variables. 
-> [MongooseJS](https://mongoosejs.com/) will use the MONGO_URI to connect to your MongoDB instance. \n
+> [MongooseJS](https://mongoosejs.com/) will use the MONGO_URI to connect to your MongoDB instance. <br/>
 > NODE_ENV will equal 'production', to help us mimic Docker container behavior. 
 
 ```
