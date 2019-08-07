@@ -1,10 +1,13 @@
 # Word Counter
 
 Word counter using ExpressJS and MongoDB. Provides a RESTful API endpoint, that POST requests with a json message with two fields: "id" and "message". For example: (example: { "id": "123", "message": "hello world" }) or simply { "id": "123", "message": "hello world" }, that counts the words in the message. Server check for valid request bodies and doesn't count request with ids that have been used already.
+<br/>
 
+A [front-end UI](https://counter.robertmsoriano.com) has also been added, to allow users to submit requests from their browser. 
+![Word-Counter](https://ibb.co/dKYtNqt)
 ## Get Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development purposes. See deployment for notes on how to deploy the project on a live system, e.g. Heroku, Docker.
 
 ### Prerequisites
 
@@ -23,6 +26,26 @@ Clone or download this GitHub repository
 
 ```
 git clone https://github.com/robertomsoriano/word-counter.git
+```
+Project Directory
+```
+word-counter
+└───static
+│   │   index.css
+│   │   index.js
+└───views
+│   └───pages
+│       │   index.ejs
+|   .gitignore
+|   app.json  //For Heroku
+│   LICENSE
+|   package.json
+│   README.md
+|   routes.js
+|   Schema.js
+|   server.js
+
+After npm install, you should see the node_modules dir. Keep reading for instructions on .env file to be added as well. 
 ```
 
 Install dependencies using NPM.
@@ -52,7 +75,7 @@ Server started
 MongoDB is connected
 ```
 
-Unless specified otherwise, server will run in http://<i></i>localhost, or http://<i></i>127.0.0.1:80
+Unless specified otherwise, server will run at http://<i></i>localhost, or http://<i></i>127.0.0.1:80
 
 ## Deployment
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/robertomsoriano/word-counter)
@@ -89,6 +112,13 @@ EXPOSE 80
 
 CMD ["npm", "run", "start"]
 ```
+
+###Improvements
+- Coming Soon. 
+
+This project's whole back-end functionality could be optimized by using Serverless technology, e.g., AWS Lambda and DynamoDB. 
+> Lambda function will run everytime a GET request is sent to the main endpoint, to provide the current count. <br/>
+> Every POST request will run function to check for valid input params and update count on the database. 
 
 
 ## Author
