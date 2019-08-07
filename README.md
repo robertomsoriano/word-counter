@@ -115,7 +115,7 @@ EXPOSE 80
 CMD ["npm", "run", "start"]
 ```
 
-###Improvements
+### Improvements
 - Coming Soon. 
 
 This project's whole back-end functionality could be optimized by using Serverless technology, e.g., AWS Lambda and DynamoDB. 
