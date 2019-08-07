@@ -122,6 +122,66 @@ This project's whole back-end functionality could be optimized by using Serverle
 > Lambda function will run everytime a GET request is sent to the main endpoint, to provide the current count. <br/>
 > Every POST request will run function to check for valid input params and update count on the database. 
 
+Example Lambda Functions: 
+```
+// handler.js
+
+'use strict'
+const AWS = require('aws-sdk');
+AWS.config.update({ region: "us-east-2"});
+const ddb = new AWS.DynamoDB({ apiVersion: "2012-10-08"});
+const documentClient = new AWS.DynamoDB.DocumentClient({ region: "us-east-2"});
+
+module.exports.getCount = async (event, context) => {
+  const params = {
+    TableName: "Count",
+    Key: {
+      key: "1"
+    }
+  }
+
+  try {
+    const data = await documentClient.get(params).promise();
+    console.log(data);
+    return data
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+module.exports.updateCount = async (event, context) => {
+  let currentCount = getCount()
+  let ids = current.count.ids
+  const reqBody = JSON.parse(event.body);
+  const { id, message } = reqBody;
+  //Check for valid requests
+  function checkValid(id, message){
+      //if id has been used, ignore request.
+      //strip whitespace in message and only count words.
+      return wordsCounted
+  }
+    function wordsCounted(message){
+      //strip whitespace and newline chars in message and only count words.
+      return numberOfWordsCounted
+  }
+  const params = {
+    TableName: "Count",
+    Item: {
+      key: "1",
+      ids: ids.push(id),
+      count: currentCount.count+ wordsCounted(message)
+    }
+  }
+
+  try {
+    const data = await documentClient.put(params).promise();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+```
+
 
 ## Author
 
