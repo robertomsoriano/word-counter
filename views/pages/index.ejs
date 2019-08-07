@@ -1,3 +1,7 @@
+<!-- 
+  Frontend UI
+  Uses EJ for server-side HTML markup with JavaScript templating. 
+-->
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -5,19 +9,24 @@
         <title>Counter</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Load CSS -->
         <link rel="stylesheet" href="index.css">
+        <!-- Bootstrap CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
+      <!-- Header -->
         <header class="bg-primary text-center py-5 mb-4">
             <div class="container">
               <h1 class="font-weight-light text-white">Word Counter</h1>
             </div>
           </header>
+      <!-- End Header -->
+      <!-- Current Count Section -->
         <div class="container">
           <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <div class="card card-signin my-5">
+              <div class="card card-counter my-5">
                 <div class="card-body">
                   <h5 class="card-title text-center">Counter</h5>
                   <p id='current'>Current Count: <%= count%></p>
@@ -25,11 +34,13 @@
               </div>
             </div>
             </div>
+            <!-- End  -->
+            <!-- Form Section -->
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div class="card card-signin my-5">
+            <div class="card card-counter my-5">
               <div class="card-body">
                 <h5 class="card-title text-center">Count your words</h5>
-                <form class="form-signin" id='form-sendCount'>
+                <form class="form-counter" id='form-sendCount'>
                   <div class="form-label-group">
                     <input type="number" id="inputID" class="form-control" placeholder="id" required autofocus>
                     <label for="inputID">ID</label>
@@ -46,11 +57,15 @@
             </div>
           </div>
         </div>
+        <!-- End -->
+        <!-- Footer Section -->
         <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
             <div class="container text-center">
               <small>Copyright &copy; Roberto Soriano</small>
             </div>
           </footer>
+          <!-- End -->
+          <!-- Load JavaScript for UI Updates -->
         <script type="module" src="index.js"></script> 
     </body>
 </html>

@@ -1,22 +1,26 @@
+/*
+Get current number of words counted.
+Function updates the UI based on the current 
+"count" value.
+*/
+
 function getCount() {
   fetch("/count")
     .then(res => res.json())
     .then(res => {
-      console.log(res);
-
       if (res.count === null || res.count === 0) {
         let paragraph = document.getElementById("current");
         paragraph.textContent = `No words have been counted yet. Be the first one!`;
         return;
       } else {
         let count = res.count;
-        console.log(count);
         let paragraph = document.getElementById("current");
         paragraph.textContent = `Words counted: ${count}`;
         return;
       }
     });
 }
+// Call function on load.
 getCount();
 
 //Form submission
@@ -31,12 +35,16 @@ function postData(url = "/", data) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(data)
-  }).then(res => {
-    console.log(res);
+  }).catch(err => {
+    throw err;
   });
 }
 
-//On submission function
+/*
+On submission function
+Take form data and run POST request.  
+*/
+
 function logSubmit(event) {
   let id = document.getElementById("inputID").value;
   let msg = document.getElementById("inputMessage").value;
@@ -44,7 +52,6 @@ function logSubmit(event) {
     id: `${id}`,
     message: `${msg}`
   };
-  console.log(data);
   postData("/", data);
 }
 //Listen for Submission

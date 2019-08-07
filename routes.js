@@ -26,10 +26,11 @@ function rmWhiteSpace(str) {
 }
 
 // @route   POST /
-// @desc    updates counter
+// @desc    updates counter and returns current count.
 // @access  Public
 
 router.post("/", async (req, res) => {
+  // Use helper function to sanitize input
   let obj = msgSan(req.body);
   //check for invalid requests with empty params.
   if (
@@ -88,6 +89,10 @@ router.post("/", async (req, res) => {
     }
   });
 });
+
+// @route   GET
+// @desc    Returns current count.
+// @access  Public
 
 router.get("/count", async (req, res) => {
   const filter = { key: 1 };

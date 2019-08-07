@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Create Schema
+/* 
+Create Count Model. 
+We will only need one object that keeps
+track of 'ids' used and words 'counted'.
+*/
 const CountSchema = new Schema({
   key: {
     type: Number,

@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 const cors = require("cors");
 const path = require("path");
-
+// Initialize Express App
 const app = express();
 
 // Allow cross-origin
