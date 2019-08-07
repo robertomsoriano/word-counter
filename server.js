@@ -1,6 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const mongoose = require("mongoose"); // Mongoose will make using MongoDB more straightforward.
+// For Env vars
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
@@ -18,8 +18,8 @@ app.use(express.json());
 
 // DB config
 const db = process.env.MONGO_URI;
-// Connect to MongoDB
 
+// Connect to MongoDB
 const options = {
   useFindAndModify: false,
   useNewUrlParser: true,
@@ -30,7 +30,7 @@ const options = {
   // If not connected, return errors immediately rather than waiting for reconnect
   bufferMaxEntries: 0
 };
-
+//Helper function in case first connect attempt fails.
 const connectWithRetry = () => {
   console.log("MongoDB connection with retry");
   mongoose
@@ -50,23 +50,16 @@ const connectWithRetry = () => {
 connectWithRetry();
 
 // Use Routes
-//to get counter
 app.use("/", require("./routes"));
 
 // for production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve(__dirname, "static")));
-  // app.get("*", (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, "static", "index.html"));
-  // });
 
   // set the view engine to ejs
   app.set("view engine", "ejs");
 
-  // use res.render to load up an ejs view file
-
-  // index page
-
+  // Serve Index page.
   app.get("/", async function(req, res) {
     await res.render("pages/index", {
       count: "Loading..."
@@ -75,5 +68,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Listen on port 80, or env var provided.
+// Port 80 will also be used in the Docker Container.
 const port = process.env.PORT || 80;
 app.listen(port, () => console.log(`Server started`));

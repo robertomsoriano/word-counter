@@ -1,0 +1,7 @@
+{
+    "name": "Word Counter",
+    "description": "A Node.js Word Counter app using ExpressJS and MongoDB",
+    "repository": "https://github.com/robertomsoriano/word-counter",
+    "logo": "https://node-js-sample.herokuapp.com/node.png",
+    "keywords": ["node", "express", "MongoDB", "static"]
+  }
