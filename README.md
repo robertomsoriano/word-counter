@@ -1,6 +1,6 @@
 # Word Counter
 
-Word counter using ExpressJS and MongoDB. Provides a RESTful API endpoint, that POST requests with a json message with two fields: "id" and "message". For example: (example: { "id": "123", "message": "hello world" }) or simply { "id": "123", "message": "hello world" }, that counts the words in the message. Server check for valid request bodies and doesn't count request with ids that have been used already.
+Word counter using ExpressJS and MongoDB. Provides a RESTful API endpoint, that POST requests with a json message with two fields: "id" and "message". For example: (example: { "id": "123", "message": "hello world" }) or simply { "id": "123", "message": "hello world" }. If the request is valid, words in the message area counted and added to the (historical) count. Server check for valid request bodies and doesn't count request with ids that have been used already.
 <br/>
 
 A [front-end UI](https://counter.robertmsoriano.com) has also been added, to allow users to submit requests from their browser. 
