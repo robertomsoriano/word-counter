@@ -9,8 +9,8 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 This Projects requires NodeJS and MongoDB. We will also use NPM for package management. 
-- MongoDB will be connected using [MongooseJS](https://mongoosejs.com/).
-- You may signup for a free Cloud [MongoDB](https://www.mongodb.com/cloud) instance, or run your own locally.
+> MongoDB will be connected using [MongooseJS](https://mongoosejs.com/).
+> You may signup for a free Cloud [MongoDB](https://www.mongodb.com/cloud) instance, or run your own locally.
 
 * [NodeJS](https://nodejs.org/)
 * [MongoDB](https://www.mongodb.com/)
@@ -32,8 +32,8 @@ cd word-counter/
 npm install 
 ```
 Add .env file with MONGO_URI and NODE_ENV environment variables. 
--[MongooseJS](https://mongoosejs.com/) will use the MONGO_URI to connect to your MongoDB instance.
--NODE_ENV will equal 'production', to help us mimic Docker container behavior. 
+> [MongooseJS](https://mongoosejs.com/) will use the MONGO_URI to connect to your MongoDB instance.
+> NODE_ENV will equal 'production', to help us mimic Docker container behavior. 
 
 ```
 touch .env
@@ -52,13 +52,14 @@ Server started
 MongoDB is connected
 ```
 
-Unless specified otherwise, server will run in http://localhost, or http://127.0.0.1:80
+Unless specified otherwise, server will run in http://<i></i>localhost, or http://<i></i>127.0.0.1:80
 
 ## Deployment
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/robertomsoriano/word-counter)
 
 You may deploy this application to Heroku
 * Here is a [live version](https://word-counter-lw.herokuapp.com/) on Heroku.
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/robertomsoriano/word-counter)
+
 
 Or use Heroku CLI
 ```
@@ -72,7 +73,7 @@ You may also deploy using Docker
 * Here is a [live version](https://counter.robertmsoriano.com) on my Linux VPS using Docker.
 
 ```
-// Dockerfile
+# Dockerfile
 
 FROM node:10-alpine
 
