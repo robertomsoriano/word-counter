@@ -53,39 +53,43 @@ npm run start
 
 Unless specified otherwise, server will run in http://localhost, or http://127.0.0.1:80
 
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
-You may deploy this application 
+You may deploy this application to Heroku
+* Here is a [live version](https://word-counter-lw.herokuapp.com/) on Heroku.
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/robertomsoriano/word-counter)
 
-## Built With
+Or use Heroku CLI
+```
+npm install -g heroku
+git add . 
+git commit -m "First Heroku deploy"
+heroku create //You will need to login or signup.
+git push heroku master
+```
+You may also deploy using Docker
+* Here is a [live version](https://counter.robertmsoriano.com) on my Linux VPS using Docker.
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+```
+// Dockerfile
+
+FROM node:10-alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 80
+
+CMD ["npm", "run", "start"]
+```
 
 
-## Authors
+## Author
 
 * **Roberto Soriano** - (https://robertmsoriano.com)
 
